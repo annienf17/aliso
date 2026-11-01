@@ -28,17 +28,17 @@
 
 :root {
   /* Brand blues */
-  --navy: #0b1f35;
-  --navy-deep: #07172a;
-  --blue: #173b61;
-  --accent: #3979ba;
-  --accent-bright: #6ca2da; /* large accent type on navy */
-  --accent-light: #8dbbe6; /* small accent text on dark (AA) */
-  --accent-ink: #2b639c; /* small accent text on light (AA) */
-  --steel: #a6b9c4;
-  --mist: #f4f7fa;
-  --white: #ffffff;
-  --text: #33475b;
+  --navy: rgba(11, 31, 53, 1);
+  --navy-deep: rgba(7, 23, 42, 1);
+  --blue: rgba(23, 59, 97, 1);
+  --accent: rgba(57, 121, 186, 1);
+  --accent-bright: rgba(108, 162, 218, 1); /* large accent type on navy */
+  --accent-light: rgba(141, 187, 230, 1); /* small accent text on dark (AA) */
+  --accent-ink: rgba(43, 99, 156, 1); /* small accent text on light (AA) */
+  --steel: rgba(166, 185, 196, 1);
+  --mist: rgba(244, 247, 250, 1);
+  --white: rgba(255, 255, 255, 1);
+  --text: rgba(51, 71, 91, 1);
 
   --line-light: rgba(11, 31, 53, 0.14);
   --line-dark: rgba(166, 185, 196, 0.2);
@@ -2460,6 +2460,42 @@ h3 {
 
 @media (prefers-reduced-motion: reduce) {
   .portraits__frame {
+    transition: none;
+  }
+}
+
+/* ---------- PROJECTS — partner logos ---------- */
+.partners {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem clamp(1.5rem, 4vw, 3rem);
+  margin: clamp(2.5rem, 5vw, 5rem) 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.partners__link {
+  display: block;
+  opacity: 0.6;
+  transition: opacity 0.4s ease;
+}
+
+.partners__link:hover,
+.partners__link:focus-visible {
+  opacity: 1;
+}
+
+.partners__link img {
+  display: block;
+  width: auto;
+  height: clamp(1.75rem, 3.5vw, 3.5rem);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners__link {
     transition: none;
   }
 }
